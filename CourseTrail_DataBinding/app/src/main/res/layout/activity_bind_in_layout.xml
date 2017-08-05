@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.miymayster.coursetrail_databinding.BindInLayoutActivity">
+
+    <data>
+        <variable
+            name="garden"
+            type="com.miymayster.coursetrail_databinding.GardenInfo" />
+        <variable
+            name="gardenListener"
+            type="com.miymayster.coursetrail_databinding.GardenListener" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/gardenNameTextView"
+                android:text="@{garden.name}"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{gardenListener::methodReferenceOnClick}"
+                android:padding="16dp" />
+
+            <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="I have seen this garden"
+                android:layout_marginLeft="16dp"
+                android:checked="@{garden.seen}"
+                android:onCheckedChanged="@{(cb, isChecked) -> gardenListener.seenChanged(garden, isChecked)}" />
+
+            <include layout="@layout/address" bind:garden="@{garden}" />
+
+            <TextView
+                android:id="@+id/gardenTypeTextView"
+                android:text="@{garden.type}"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:onClick="@{(view) -> gardenListener.listenerBindingOnclick(view, garden)}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp" />
+
+            <TextView
+                android:id="@+id/gardenSizeTextView"
+                android:text="@{garden.size}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp" />
+        </LinearLayout>
+    </ScrollView>
+</layout>

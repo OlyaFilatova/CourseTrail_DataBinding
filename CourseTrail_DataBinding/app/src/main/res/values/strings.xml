@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">CourseTrail_DataBinding</string>
+    <string name="action_previous">Previous</string>
+    <string name="action_next">Next</string>
+    <string name="action_bind_in_layout">Bind in layout</string>
+    <string name="action_bind_in_java">Bind in JAVA</string>
+</resources>
