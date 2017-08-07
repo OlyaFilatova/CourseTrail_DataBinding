@@ -98,9 +98,9 @@ To enable variables
  
 Make in java your class and fields Observable so that interface could react on data changes
 
-![Adress visible](address_visible.png)
+![Adress visible](docs/address_visible.png)
 
 
-![Address hidden](address_invisible.png)
+![Address hidden](docs/address_invisible.png)
 
 
