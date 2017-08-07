@@ -2,14 +2,14 @@
 
 
 
-Very simple app to demonatrate power of Data Binding library.
+Very simple app to demonstrate power of Data Binding library.
 
 No more findViewById :)
 
 
-In this app there are three GardenInfo elements.
+In this app there are three objects of class GardenInfo.
 
-You can change what garden you see by clicking 'next' or 'previous' item in menu bar of the activity.
+You can change which garden you see by clicking 'next' or 'previous' item in menu bar of the activity.
 
 Most interesting activity is BindInLayoutActivity. All you need to do to change garden that is shown - you need to pass relevant object to the ActivityBindInLayoutBinding. 
 
@@ -40,7 +40,7 @@ All preparing in java consist of:
 
 ```
 
-To create such a class:
+To create such a class(ActivityBindInLayoutBinding):
 
 - First. Enable data binding:
 
@@ -96,7 +96,7 @@ To enable variables
 
 ```
  
-Make in java your class and fields Observable so that interface could react on data changes
+Make in java your info class and fields Observable so that interface could react on their data changes
 
 ![Adress visible](docs/address_visible.png)
 
